@@ -334,7 +334,7 @@
             // scaleContainer와 sideButton에 스케일 적용
             scaleContainer.style.transform = `scale(${scaleFactor})`;
             sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
-            sideButton.style.right = `${10 + buttonSize * (1 - scaleFactor)}px`; // 오른쪽으로부터의 거리
+            sideButton.style.right = `${40 / scaleFactor}px`; // sideButton의 위치 조정
 
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
