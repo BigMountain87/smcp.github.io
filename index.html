@@ -343,6 +343,10 @@
         function adjustScale() {
             const scaleFactor = window.innerWidth / document.body.offsetWidth; // 창의 너비에 따라 스케일 인자 계산
             document.body.style.transform = `scale(${scaleFactor})`; // body 요소에 스케일 적용
+            const excludedComponent = document.getElementById('sideButton');
+            if (excludedComponent) {
+                excludedComponent.style.transform = `scale(${1 / scaleFactor})`;
+            }
         }
 
         window.addEventListener('resize', adjustScale); // 창 크기가 변경될 때 함수 호출
