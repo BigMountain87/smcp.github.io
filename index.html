@@ -23,13 +23,13 @@
             transform-origin: top left;
         }
 
-        /* Initial style for the button
+        /* Initial style for the button */
         #sideButton {
             position: fixed;
-            width: 16%;
-            /* height: 74px; */
-        /* bottom: 120px;
-            right: 0px;
+            width: 230px;
+            height: 74px;
+            bottom: 120px;
+            right: 40px;
             z-index: 1000;
             font-size: 20px;
             border-radius: 8px;
@@ -37,10 +37,10 @@
             font-weight: 700;
             background: #FFD600;
             /* Adding shadow */
-        /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); */
-        /* } */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        }
 
-        */ img,
+        img,
         #timer {
             display: flex;
             flex-direction: column;
@@ -183,7 +183,7 @@
         </div>
         <img width="100%" src="bottom_image.jpg" alt="1" />
     </div>
-    <!-- <div id="sideButton">시스템 문의하기</div> -->
+    <div id="sideButton">시스템 문의하기</div>
     <!-- <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -250,16 +250,16 @@
                 executeAction(); // The specified date has been reached
             }
         }, 1000);
-        // document.getElementById("sideButton").addEventListener("click", function() {
-        //     const targetElement = document.getElementById("targetPoint");
-        //     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        //     const offsetPosition = elementPosition - (window.innerHeight / 4);
+        document.getElementById("sideButton").addEventListener("click", function() {
+            const targetElement = document.getElementById("targetPoint");
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - (window.innerHeight / 4);
 
-        //     window.scrollTo({
-        //         top: offsetPosition,
-        //         behavior: "smooth"
-        //     });
-        // });
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        });
 
         function postData(url = "", data = {}) {
             // Default options are marked with *
@@ -322,7 +322,7 @@
         function adjustScale() {
             const scaleContainer = document.getElementById('scaleContainer');
             const body = document.body;
-            // const sideButton = document.getElementById('sideButton'); // sideButton 참조
+            const sideButton = document.getElementById('sideButton'); // sideButton 참조
 
             // 1140px을 기준으로 스케일 팩터 계산
             const baseWidth = 1140; // 기준 가로 폭
@@ -332,9 +332,9 @@
             body.style.width = window.innerWidth > baseWidth ? `${baseWidth}px` : '100%';
 
             // scaleContainer와 sideButton에 스케일 적용
-            // scaleContainer.style.transform = `scale(${scaleFactor})`;
-            // sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
-            // sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
+            scaleContainer.style.transform = `scale(${scaleFactor})`;
+            sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
+            sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
 
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
