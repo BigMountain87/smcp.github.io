@@ -19,7 +19,7 @@
         }
 
         #scaleContainer {
-            width: 100%;
+            width: 1140px;
             transform-origin: top left;
         }
 
@@ -329,7 +329,7 @@
             const scaleFactor = window.innerWidth / baseWidth;
 
             body.style.transform = `scale(${scaleFactor})`;
-            scaleContainer.style.transform = `scale(${scaleFactor})`;
+            // scaleContainer.style.transform = `scale(${scaleFactor})`;
             sideButton.style.transform = `scale(${scaleFactor})`;
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
