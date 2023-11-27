@@ -70,46 +70,6 @@
             gap: 30px
         }
 
-        /* 모달창 전체 스타일 */
-        .modal {
-            display: none;
-            /* 기본적으로 숨겨져 있음 */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 40%;
-            border-radius: 10px;
-
-            /* 중앙 정렬을 위한 스타일 */
-            position: fixed;
-            /* 모달 컨텐츠를 화면에 고정 */
-            top: 50%;
-            /* 상단에서부터 50%의 위치에 배치 */
-            left: 50%;
-            /* 좌측에서부터 50%의 위치에 배치 */
-            transform: translate(-50%, -50%);
-            /* 상단과 좌측으로부터 50% 만큼 이동하여 중앙에 위치하도록 조정 */
-        }
-
         /* 닫기 버튼 스타일 */
         .close {
             color: #aaa;
@@ -362,6 +322,7 @@
         function adjustScale() {
             const scaleContainer = document.getElementById('scaleContainer');
             const scaleFactor = window.innerWidth / scaleContainer.offsetWidth;
+            console.log(scaleFactor);
 
             scaleContainer.style.transform = `scale(${scaleFactor})`;
         }
