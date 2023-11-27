@@ -321,9 +321,11 @@
 
 
         function adjustScale() {
+
+            const width = 1414;
             const scaleContainer = document.getElementById('scaleContainer');
             const sideButton = document.getElementById('sideButton');
-            const scaleFactor = window.innerWidth / scaleContainer.offsetWidth;
+            const scaleFactor = window.innerWidth / width;
             console.log(scaleFactor);
 
             scaleContainer.style.transform = `scale(${scaleFactor})`;
