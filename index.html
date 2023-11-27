@@ -320,24 +320,24 @@
         });
 
 
-        function adjustScale() {
+        // function adjustScale() {
 
-            const width = 1414;
-            const scaleContainer = document.getElementById('scaleContainer');
-            const sideButton = document.getElementById('sideButton');
-            const scaleFactor = window.clientHeight / width;
-            console.log(scaleFactor);
+        //     const width = 1414;
+        //     const scaleContainer = document.getElementById('scaleContainer');
+        //     const sideButton = document.getElementById('sideButton');
+        //     const scaleFactor = window.clientHeight / width;
+        //     console.log(scaleFactor);
 
-            scaleContainer.style.transform = `scale(${scaleFactor})`;
-            sideButton.style.transform = `scale(${scaleFactor})`;
+        //     scaleContainer.style.transform = `scale(${scaleFactor})`;
+        //     sideButton.style.transform = `scale(${scaleFactor})`;
 
-            // 글자 크기 조정
-            const baseFontSize = 16; // 기본 글자 크기를 16px로 설정
-            document.documentElement.style.fontSize = `${baseFontSize / scaleFactor}px`;
-        }
+        //     // 글자 크기 조정
+        //     const baseFontSize = 16; // 기본 글자 크기를 16px로 설정
+        //     document.documentElement.style.fontSize = `${baseFontSize / scaleFactor}px`;
+        // }
 
-        window.addEventListener('resize', adjustScale);
-        adjustScale();
+        // window.addEventListener('resize', adjustScale);
+        // adjustScale();
 
 
 
