@@ -322,8 +322,7 @@
         function adjustScale() {
             const scaleContainer = document.getElementById('scaleContainer');
             const body = document.body;
-            // sideButton 참조는 필요하지 않을 수 있음
-            // const sideButton = document.getElementById('sideButton');
+            const sideButton = document.getElementById('sideButton'); // sideButton 참조
 
             // 1140px을 기준으로 스케일 팩터 계산
             const baseWidth = 1140; // 기준 가로 폭
@@ -332,8 +331,9 @@
             // body의 width 조정
             body.style.width = window.innerWidth > baseWidth ? `${baseWidth}px` : '100%';
 
-            // scaleContainer에 스케일 적용
+            // scaleContainer와 sideButton에 스케일 적용
             scaleContainer.style.transform = `scale(${scaleFactor})`;
+            sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
             const baseFontSize = 16; // 1140px에서의 기본 글자 크기
@@ -342,6 +342,7 @@
 
         window.addEventListener('resize', adjustScale);
         adjustScale();
+
 
 
 
