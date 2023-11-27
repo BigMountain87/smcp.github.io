@@ -329,7 +329,8 @@
             let clinicName = document.getElementById("clinicName").value;
             let email = document.getElementById("email").value;
 
-            if (!clinicName && !email) {
+            if (clinicName && email) {
+                // 둘 다 입력되었을 때
                 let data = {
                     clinic_name: clinicName,
                     clinic_email: email
@@ -344,9 +345,11 @@
                         alert("문의 접수에 실패하였습니다. 다시 시도해주세요.");
                     });
             } else {
+                // 하나라도 입력되지 않았을 때
                 alert("한의원명과 이메일 또는 연락처를 모두 입력해주세요!");
             }
         });
+
 
         function adjustScale() {
             const scaleContainer = document.getElementById('scaleContainer');
