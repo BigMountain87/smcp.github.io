@@ -346,6 +346,13 @@
             const baseFontSize = 16; // 1140px에서의 기본 글자 크기
             document.documentElement.style.fontSize = `${baseFontSize * scaleFactor}px`;
         }
+        document.addEventListener('scroll', function() {
+            const maxScroll = document.getElementById('bottomImage').offsetTop;
+            if (window.scrollY > maxScroll) {
+                window.scrollTo(0, maxScroll);
+            }
+        });
+
 
         window.addEventListener('resize', adjustScale);
         adjustScale();
