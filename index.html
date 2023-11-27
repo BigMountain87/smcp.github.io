@@ -9,6 +9,9 @@
         body {
             font-family: 'Pretendard', sans-serif;
             gap: 0px;
+            transform-origin: top left;
+            /* 변환의 기준점을 왼쪽 상단으로 설정 */
+
         }
 
         /* Initial style for the button */
@@ -336,6 +339,14 @@
                     alert("문의 접수에 실패하였습니다. 다시 시도해주세요.");
                 });
         });
+
+        function adjustScale() {
+            const scaleFactor = window.innerWidth / document.body.offsetWidth; // 창의 너비에 따라 스케일 인자 계산
+            document.body.style.transform = `scale(${scaleFactor})`; // body 요소에 스케일 적용
+        }
+
+        window.addEventListener('resize', adjustScale); // 창 크기가 변경될 때 함수 호출
+        adjustScale(); // 페이지 로드 시 함수 호출
 
         // // 모달 요소를 가져옵니다.
         // let modal = document.getElementById("myModal");
