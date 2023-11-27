@@ -25,20 +25,22 @@
 
         /* Initial style for the button */
         #sideButton {
-            display: none;
+            display: flex;
             position: fixed;
-            width: 230px;
-            height: 74px;
+            width: 17vw;
+            height: 6vw;
             bottom: 120px;
             right: 40px;
             z-index: 1000;
-            font-size: 20px;
+            font-size: 30px;
             border-radius: 8px;
             border: 2px solid var(--memo-G2, #45464D);
             font-weight: 700;
             background: #FFD600;
             /* Adding shadow */
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+            align-items: center;
+            justify-content: center;
         }
 
         img,
@@ -157,7 +159,9 @@
 </head>
 
 <body>
+    <div id="sideButton">시스템 문의하기</div>
     <div id="scaleContainer">
+
         <!-- 페이지의 나머지 내용 -->
 
         <img width="100%" src="header_image.jpg" alt="1" />
@@ -184,7 +188,7 @@
         </div>
         <img width="100%" src="bottom_image.jpg" alt="1" />
     </div>
-    <div id="sideButton">시스템 문의하기</div>
+
     <!-- <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -334,8 +338,8 @@
 
             // scaleContainer와 sideButton에 스케일 적용
             scaleContainer.style.transform = `scale(${scaleFactor})`;
-            sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
-            sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
+            // sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
+            // sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
 
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
