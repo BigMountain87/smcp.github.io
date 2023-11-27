@@ -322,14 +322,17 @@
 
         function adjustScale() {
             const scaleContainer = document.getElementById('scaleContainer');
+            const sideButton = document.getElementById('sideButton'); // sideButton 참조 추가
             const scaleFactor = window.innerWidth / scaleContainer.offsetWidth;
             console.log(scaleFactor);
 
             scaleContainer.style.transform = `scale(${scaleFactor})`;
+            sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에 스케일 적용
         }
 
         window.addEventListener('resize', adjustScale);
         adjustScale();
+
 
 
         // window.addEventListener('resize', adjustScale); // 창 크기가 변경될 때 함수 호출
