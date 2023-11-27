@@ -38,12 +38,8 @@
             background: #FFD600;
             /* Adding shadow */
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-
         }
 
-        /* 
-
-        */
         img,
         #timer {
             display: flex;
@@ -160,8 +156,6 @@
 </head>
 
 <body>
-    <button id="sideButton">시스템 문의하기</button>
-
     <div id="scaleContainer">
         <!-- 페이지의 나머지 내용 -->
 
@@ -189,6 +183,7 @@
         </div>
         <img width="100%" src="bottom_image.jpg" alt="1" />
     </div>
+    <button id="sideButton">시스템 문의하기</button>
     <!-- <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -335,13 +330,11 @@
 
             // body의 width 조정
             body.style.width = window.innerWidth > baseWidth ? `${baseWidth}px` : '100%';
-            console.log("body")
-            console.log(sideButton.style.right)
-            // // scaleContainer와 sideButton에 스케일 적용
-            // scaleContainer.style.transform = `scale(${scaleFactor})`;
-            // sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
-            // sideButton.style.right = `${50 * scaleFactor*scaleFactor*scaleFactor}px`; // sideButton의 위치 조정
-            // console.log(sideButton.style.right)
+
+            // scaleContainer와 sideButton에 스케일 적용
+            scaleContainer.style.transform = `scale(${scaleFactor})`;
+            sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
+            sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
 
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
