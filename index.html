@@ -187,30 +187,33 @@
 </head>
 
 <body>
+    <div id="scaleContainer">
+        <!-- 페이지의 나머지 내용 -->
 
-    <img width="100%" src="header_image.jpg" alt="1" />
-    <div id="timer">
-        <span>무료 커스터마이징 이벤트 남은 시간!</span>
-        <div id="countdown">
+        <img width="100%" src="header_image.jpg" alt="1" />
+        <div id="timer">
+            <span>무료 커스터마이징 이벤트 남은 시간!</span>
+            <div id="countdown">
 
-            <span id="day"></span>
-            <span id="time"></span>
+                <span id="day"></span>
+                <span id="time"></span>
+            </div>
         </div>
-    </div>
 
-    <img width="100%" src="body_image.jpg" alt="1" />
-    <div id="targetPoint">
-        <span style="font-size: 2.125rem;font-weight: 700;">한의원명과 이메일 또는 연락처를 남겨주시면,</span>
-        <span style="font-size: 2.125rem;font-weight: 700;">연락드리겠습니다!</span>
-        <div style="display:flex;gap:70px">
-            <input type="text" id="clinicName" name="clinicName" placeholder="한의원명">
-            <input type="email" id="email" name="email" placeholder="이메일 또는 연락처">
+        <img width="100%" src="body_image.jpg" alt="1" />
+        <div id="targetPoint">
+            <span style="font-size: 2.125rem;font-weight: 700;">한의원명과 이메일 또는 연락처를 남겨주시면,</span>
+            <span style="font-size: 2.125rem;font-weight: 700;">연락드리겠습니다!</span>
+            <div style="display:flex;gap:70px">
+                <input type="text" id="clinicName" name="clinicName" placeholder="한의원명">
+                <input type="email" id="email" name="email" placeholder="이메일 또는 연락처">
+            </div>
+            <br>
+            <button id="ask_system">시스템 문의하기</button>
+            <br>
         </div>
-        <br>
-        <button id="ask_system">시스템 문의하기</button>
-        <br>
+        <img width="100%" src="bottom_image.jpg" alt="1" />
     </div>
-    <img width="100%" src="bottom_image.jpg" alt="1" />
     <button id="sideButton">시스템 문의하기</button>
     <!-- <div id="myModal" class="modal">
         <div class="modal-content">
@@ -325,32 +328,39 @@
         ask_system.addEventListener("click", function() {
             let clinicName = document.getElementById("clinicName").value;
             let email = document.getElementById("email").value;
-            let data = {
-                clinic_name: clinicName,
-                clinic_email: email
-            };
-            postData("https://memoclinic.kr/send_email", data)
-                .then((data) => {
-                    console.log(data); // JSON data parsed by `data.json()` call
-                    alert("문의가 접수되었습니다!");
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                    alert("문의 접수에 실패하였습니다. 다시 시도해주세요.");
-                });
+
+            if (!clinicName && !email) {
+                let data = {
+                    clinic_name: clinicName,
+                    clinic_email: email
+                };
+                postData("https://memoclinic.kr/send_email", data)
+                    .then((data) => {
+                        console.log(data); // JSON data parsed by `data.json()` call
+                        alert("문의가 접수되었습니다!");
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        alert("문의 접수에 실패하였습니다. 다시 시도해주세요.");
+                    });
+            } else {
+                alert("한의원명과 이메일 또는 연락처를 모두 입력해주세요!");
+            }
         });
 
         function adjustScale() {
-            const scaleFactor = window.innerWidth / document.body.offsetWidth; // 창의 너비에 따라 스케일 인자 계산
-            document.body.style.transform = `scale(${scaleFactor})`; // body 요소에 스케일 적용
-            const excludedComponent = document.getElementById('sideButton');
-            if (excludedComponent) {
-                excludedComponent.style.transform = `scale(${1 / scaleFactor})`;
-            }
+            const scaleContainer = document.getElementById('scaleContainer');
+            const scaleFactor = window.innerWidth / scaleContainer.offsetWidth;
+
+            scaleContainer.style.transform = `scale(${scaleFactor})`;
         }
 
-        window.addEventListener('resize', adjustScale); // 창 크기가 변경될 때 함수 호출
-        adjustScale(); // 페이지 로드 시 함수 호출
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+
+
+        // window.addEventListener('resize', adjustScale); // 창 크기가 변경될 때 함수 호출
+        // adjustScale(); // 페이지 로드 시 함수 호출
 
         // // 모달 요소를 가져옵니다.
         // let modal = document.getElementById("myModal");
