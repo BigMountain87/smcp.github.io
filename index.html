@@ -323,8 +323,8 @@
             let clinicName = document.getElementById("clinicName").value;
             let email = document.getElementById("email").value;
             let data = {
-                clinicName: clinicName,
-                email: email
+                clinic_name: clinicName,
+                clinic_email: email
             };
             postData("https://memoclinic.kr/send_email", data)
                 .then((data) => {
