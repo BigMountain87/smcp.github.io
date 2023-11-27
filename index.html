@@ -325,7 +325,7 @@
             const width = 1414;
             const scaleContainer = document.getElementById('scaleContainer');
             const sideButton = document.getElementById('sideButton');
-            const scaleFactor = window.innerWidth / width;
+            const scaleFactor = window.clientHeight / width;
             console.log(scaleFactor);
 
             scaleContainer.style.transform = `scale(${scaleFactor})`;
