@@ -319,6 +319,25 @@
             }
         });
 
+        function adjustScale() {
+            const scaleContainer = document.getElementById('scaleContainer');
+            const sideButton = document.getElementById('sideButton');
+
+            // 1140px을 기준으로 스케일 팩터 계산
+            const baseWidth = 1140; // 기준 가로 폭
+            const scaleFactor = window.innerWidth / baseWidth;
+
+            scaleContainer.style.transform = `scale(${scaleFactor})`;
+            sideButton.style.transform = `scale(${scaleFactor})`;
+
+            // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
+            const baseFontSize = 16; // 1140px에서의 기본 글자 크기
+            document.documentElement.style.fontSize = `${baseFontSize * scaleFactor}px`;
+        }
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+
 
         // function adjustScale() {
 
