@@ -9,7 +9,18 @@
     <link rel="icon" href="logo_icon.png" type="image/png">
 
     <style>
+        .blur {
+            filter: blur(5px);
+            transition: filter 300ms;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+
         body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
             width: 2100px;
             font-family: 'Pretendard', sans-serif;
             gap: 0px;
@@ -181,7 +192,7 @@
             font-size: 80px;
             font-style: normal;
             font-weight: 700;
-            line-height: 160%;
+            /* line-height: 160%; */
             /* 128px */
         }
 
@@ -208,7 +219,8 @@
         }
 
         #day {
-
+            width: 300px;
+            text-align: right;
             color: var(--memo-G, #303139);
             /* font-family: Inter; */
             font-size: 128px;
@@ -260,11 +272,11 @@
                 <span id="day"> 일</span>
                 <!-- <span id="time"></span> -->
                 <!-- <div style="display: flex;flex-direction:row"> -->
-                <div id="hours" class="time_box">14</div>
+                <div id="hours" class="time_box"></div>
                 <div class="comma">:</div>
-                <div id="minutes" class="time_box">43</div>
+                <div id="minutes" class="time_box"></div>
                 <div class="comma">:</div>
-                <div id="seconds" class="time_box">56</div>
+                <div id="seconds" class="time_box"></div>
                 <!-- <span class="time_text">:</span> -->
 
                 <!-- </div> -->
@@ -351,7 +363,7 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
             const secondsPadded = seconds.toString().padStart(2, '0');
 
             // Display days
-            let day_text = days + "일 ";
+            let day_text = days + "일";
             let day = document.getElementById("day");
             day.textContent = day_text;
 
@@ -379,17 +391,16 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
         // Set the target date and time
         const targetDate = new Date('2023-12-31T23:59:59');
 
-        // Update the countdown every second
-        const countdownInterval = setInterval(function() {
+
+
+        function set_time() {
             const timeRemaining = targetDate.getTime() - Date.now();
-            // If the target date is in the future, update the countdown
+
             if (timeRemaining > 0) {
                 formatRemainingTime(timeRemaining);
-            } else {
-                executeAction(); // The specified date has been reached
             }
-        }, 1000);
-
+        }
+        set_time();
 
         document.getElementById("sideButton").addEventListener("click", function() {
             const targetElement = document.getElementById("targetPoint");
@@ -494,6 +505,27 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
         adjustScale();
 
 
+
+        async function countdown_start() {
+
+
+            // Update the countdown every second
+            const countdownInterval = setInterval(function() {
+                const timeRemaining = targetDate.getTime() - Date.now();
+                // If the target date is in the future, update the countdown
+                if (timeRemaining > 0) {
+                    formatRemainingTime(timeRemaining);
+                } else {
+                    executeAction(); // The specified date has been reached
+                }
+            }, 1000);
+        }
+        // 페이지 로드가 완료되면 'loaded' 클래스를 body에 추가합니다.
+        window.addEventListener('load', async function() {
+            // Update the countdown every second
+            await countdown_start();
+            document.body.classList.add('loaded');
+        });
 
 
         // function adjustScale() {
