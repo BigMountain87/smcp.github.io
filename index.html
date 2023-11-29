@@ -38,18 +38,21 @@
 
         /* Initial style for the button */
         #sideButton {
+
+
             display: flex;
             position: fixed;
             width: 25vw;
             height: 10vw;
-            bottom: 10vh;
+            bottom: 2vh;
+            color: #FFF;
             right: 1vw;
             z-index: 1000;
             font-size: 3vw;
             border-radius: 8px;
-            border: 2px solid var(--memo-G2, #45464D);
+            /* border: 2px solid var(--memo-G2, #45464D); */
             font-weight: 700;
-            background: #FFD600;
+            background: #2E67EF;
             /* Adding shadow */
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
             align-items: center;
@@ -144,6 +147,14 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
+            color: var(--memo-G4, #838388);
+            text-align: center;
+            /* font-family: Pretendard; */
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            /* 96px */
             /* line-height: 160%; */
             /* 64px */
         }
@@ -156,27 +167,22 @@
         }
 
         #ask_system {
-            /* box-sizing: border-box; */
-            padding: 20px 30px;
-
-            border-radius: 20px;
-            border: 3px solid var(--memo-LG2, #D5D7E5);
-            background: #FFD600;
             display: flex;
-            width: 74%;
-            /* height: 137px; */
-            flex-direction: column;
+            width: 1578px;
+            padding: 28px 114px;
             justify-content: center;
             align-items: center;
-            flex-shrink: 0;
-            color: #000;
+            gap: 10px;
+            border-radius: 20px;
+            background: var(--memo-Blue, #2E67EF);
+            color: #FFF;
             text-align: center;
             /* font-family: Pretendard; */
-            font-size: 46px;
+            font-size: 80px;
             font-style: normal;
             font-weight: 700;
-            /* line-height: 299.947px; */
-            /* 312.444% */
+            line-height: 160%;
+            /* 128px */
         }
 
         #targetPoint {
@@ -187,7 +193,7 @@
             gap: 30px;
             padding: 30px;
             align-items: center;
-            background: rgba(217, 217, 217, 0.40);
+            /* background: rgba(217, 217, 217, 0.40); */
         }
 
         .time_text {
@@ -268,6 +274,8 @@
         </div>
         <hr class="dotted-line">
 
+
+
         <div style="color: var(--Red, #FF5858);
 /* font-family: Pretendard; */
 font-size: 50px;
@@ -280,19 +288,19 @@ font-size: 128px;
 font-style: normal;
 font-weight: 800;
 line-height: normal;margin-top:69px;text-align:center">커스터마이징 시스템</div>
-        <div style="color: var(--memo-G2, #45464D);
+        <div id="targetPoint">
+            <div style="color: var(--memo-G2, #45464D);
 text-align: center;
 /* font-family: Pretendard; */
 font-size: 50px;
 font-style: normal;
 font-weight: 700;
 line-height: 75px; /* 150% */
-margin-top:69px">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
+margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
 
-        <div id="targetPoint">
             <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
             <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span> -->
-            <div style="display:flex;gap:5%">
+            <div style="display:flex;gap:44px">
                 <input type="text" id="clinicName" name="clinicName" placeholder="한방병원 명">
                 <input type="email" id="email" name="email" placeholder="이메일 또는 연락처">
             </div>
@@ -326,6 +334,10 @@ margin-top:69px">한방병원 / 한의원 명과 이메일 또는 연락처를 �
         </div>
     </div> -->
     <script>
+        let hours_txt = document.getElementById("hours");
+        let minutes_txt = document.getElementById("minutes");
+        let seconds_txt = document.getElementById("seconds");
+
         // Function to format the remaining time as a string and display it
         function formatRemainingTime(timeRemaining) {
             const seconds = Math.floor((timeRemaining / 1000) % 60);
@@ -342,6 +354,11 @@ margin-top:69px">한방병원 / 한의원 명과 이메일 또는 연락처를 �
             let day_text = days + "일 ";
             let day = document.getElementById("day");
             day.textContent = day_text;
+
+            hours_txt.textContent = hoursPadded;
+            minutes_txt.textContent = minutesPadded;
+            seconds_txt.textContent = secondsPadded;
+
 
             // Display time
             // let time_text = hoursPadded + ":" + minutesPadded + ":" + secondsPadded;
@@ -372,6 +389,8 @@ margin-top:69px">한방병원 / 한의원 명과 이메일 또는 연락처를 �
                 executeAction(); // The specified date has been reached
             }
         }, 1000);
+
+
         document.getElementById("sideButton").addEventListener("click", function() {
             const targetElement = document.getElementById("targetPoint");
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
