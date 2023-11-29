@@ -10,18 +10,30 @@
 
     <style>
         body {
-            width: 1140px;
+            width: 2100px;
             font-family: 'Pretendard', sans-serif;
             gap: 0px;
             transform-origin: top left;
             /* 변환의 기준점을 왼쪽 상단으로 설정 */
             overflow-x: hidden;
+            /* font-family: Pretendard; */
+
 
         }
 
         #scaleContainer {
-            width: 1140px;
+            width: 2100px;
             transform-origin: top left;
+        }
+
+        .header_txt {
+            color: var(--memo-G2, #45464D);
+            text-align: center;
+
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
         }
 
         /* Initial style for the button */
@@ -49,8 +61,6 @@
         #timer {
             display: flex;
             flex-direction: column;
-            font-size: 34px;
-            font-weight: 700;
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -62,10 +72,30 @@
             /* Removes any default padding */
         }
 
+        .time_box {
+            width: 336px;
+            height: 275px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--memo-BG2, rgba(229, 237, 247, 0.60));
+            color: var(--memo-Blue, #2E67EF);
+            text-align: center;
+            /* font-family: Inter; */
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 
         #timer {
-            height: 240px;
-            background: rgba(217, 217, 217, 0.40);
+            /* height: 240px; */
+            margin-top: 70px;
+            margin-bottom: 129px
+                /* background: rgba(217, 217, 217, 0.40); */
         }
 
         #countdown {
@@ -73,7 +103,9 @@
             flex-direction: row;
             /* gap: 10%; */
             font-size: 80px;
-            gap: 30px
+            gap: 30px;
+            margin-top: 84px;
+            align-items: center;
         }
 
         /* 닫기 버튼 스타일 */
@@ -106,12 +138,12 @@
             border-radius: 20px;
             border: 3px solid var(--memo-LG2, #D5D7E5);
             background: #FFF;
-            color: var(--memo-G4, #838388);
-            text-align: center;
-            font-size: 35.2px;
-            font-style: normal;
-            font-weight: 600;
-            height: 64px;
+            display: flex;
+            width: 626px;
+            padding: 28px 114px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             /* line-height: 160%; */
             /* 64px */
         }
@@ -157,6 +189,55 @@
             align-items: center;
             background: rgba(217, 217, 217, 0.40);
         }
+
+        .time_text {
+
+            color: var(--memo-Blue, #2E67EF);
+            text-align: center;
+            font-family: Inter;
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+        }
+
+        #day {
+
+            color: var(--memo-G, #303139);
+            /* font-family: Inter; */
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            margin-right: 125px
+        }
+
+        .comma {
+            color: var(--memo-G, #303139);
+            /* font-family: Inter; */
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+        }
+
+
+        .horizontal-line {
+            border: none;
+            border-top: 1px solid #D5D7E5;
+            /* 수평 선의 스타일을 지정합니다. */
+            margin: 10px 0;
+            /* 원하는 여백을 추가할 수 있습니다. */
+            /* background: #D5D7E5; */
+        }
+
+        .dotted-line {
+            border: none;
+            border-top: 1px dotted #D5D7E5;
+            /* 가로로 점선을 표시하고 싶은 색상 및 스타일을 지정합니다. */
+            margin: 10px 0;
+            /* 원하는 여백을 추가할 수 있습니다. */
+        }
     </style>
 </head>
 
@@ -168,27 +249,59 @@
 
         <img width="100%" src="header_image.jpg" alt="1" />
         <div id="timer">
-            <span>무료 커스터마이징 이벤트 남은 시간!</span>
+            <span class="header_txt">무료 커스터마이징 이벤트 남은 시간!</span>
             <div id="countdown">
+                <span id="day"> 일</span>
+                <!-- <span id="time"></span> -->
+                <!-- <div style="display: flex;flex-direction:row"> -->
+                <div id="hours" class="time_box">14</div>
+                <div class="comma">:</div>
+                <div id="minutes" class="time_box">43</div>
+                <div class="comma">:</div>
+                <div id="seconds" class="time_box">56</div>
+                <!-- <span class="time_text">:</span> -->
 
-                <span id="day"></span>
-                <span id="time"></span>
+                <!-- </div> -->
+
+                <!-- <span id= ></span> -->
             </div>
         </div>
+        <hr class="dotted-line">
 
-        <img width="100%" src="body_image.jpg" alt="1" />
+        <div style="color: var(--Red, #FF5858);
+/* font-family: Pretendard; */
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;margin-top:191px;text-align:center"> 세상에서 단 하나 뿐인 [한방병원/한의원] 시스템 제작</div>
+
+        <div style="color: #0669F6;
+font-size: 128px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;margin-top:69px;text-align:center">커스터마이징 시스템</div>
+        <div style="color: var(--memo-G2, #45464D);
+text-align: center;
+/* font-family: Pretendard; */
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: 75px; /* 150% */
+margin-top:69px">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
+
         <div id="targetPoint">
-            <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
-            <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span>
+            <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
+            <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span> -->
             <div style="display:flex;gap:5%">
-                <input style="width: 45%;" type="text" id="clinicName" name="clinicName" placeholder="한방병원 명">
-                <input style="width: 45%;" type="email" id="email" name="email" placeholder="이메일 또는 연락처">
+                <input type="text" id="clinicName" name="clinicName" placeholder="한방병원 명">
+                <input type="email" id="email" name="email" placeholder="이메일 또는 연락처">
             </div>
             <br>
             <button id="ask_system">시스템 문의하기</button>
             <br>
         </div>
-        <img id="bottomImage" width="100%" src="bottom_image.jpg" alt="1" />
+        <img width="100%" src="bottom_image.jpg" alt="1" />
+        <!-- <img id="bottomImage" width="100%" src="bottom_image.jpg" alt="1" /> -->
     </div>
 
     <!-- <div id="myModal" class="modal">
@@ -231,9 +344,11 @@
             day.textContent = day_text;
 
             // Display time
-            let time_text = hoursPadded + ":" + minutesPadded + ":" + secondsPadded;
-            let time = document.getElementById("time");
-            time.textContent = time_text;
+            // let time_text = hoursPadded + ":" + minutesPadded + ":" + secondsPadded;
+            // let time = document.getElementById("time");
+            // time.textContent = time_text;
+
+
         }
 
         // Function that you want to execute when the date is reached
@@ -332,7 +447,7 @@
             const sideButton = document.getElementById('sideButton'); // sideButton 참조
 
             // 1140px을 기준으로 스케일 팩터 계산
-            const baseWidth = 1140; // 기준 가로 폭
+            const baseWidth = 2100; // 기준 가로 폭
             const scaleFactor = window.innerWidth / baseWidth;
 
             // body의 width 조정
