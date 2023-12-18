@@ -305,7 +305,7 @@ line-height: normal;text-align:center">초거대 AI 기반, 내원율 증가 프
 font-size: 8rem;
 font-style: normal;
 font-weight: 800;
-line-height: normal;margin-top:4.3125rem;text-align:center">AI 카톡 전송 서비스</div>
+line-height: normal;margin-top:69px;text-align:center">AI 카톡 전송 서비스</div>
     <div id="targetPoint">
         <div style="color: var(--memo-G2, #45464D);
 text-align: center;
@@ -313,8 +313,8 @@ text-align: center;
 font-size: 3.125rem;
 font-style: normal;
 font-weight: 700;
-line-height: 4.6875rem; /* 150% */
-margin-top:4.3125rem;margin-bottom:4.3125rem;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
+line-height: 75px; /* 150% */
+margin-top:69px;margin-bottom:69px;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
 
         <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
             <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span> -->
@@ -500,24 +500,21 @@ margin-top:4.3125rem;margin-bottom:4.3125rem;">한방병원 / 한의원 명과 �
 
             // scaleContainer와 sideButton에 스케일 적용
             scaleContainer.style.transform = `scale(${scaleFactor})`;
+            const inputElements = document.querySelectorAll('input');
+            inputElements.forEach(input => {
+                input.style.transform = `scale(${scaleFactor})`;
+            });
             // sideButton.style.transform = `scale(${scaleFactor})`; // sideButton에도 스케일 적용
             // sideButton.style.right = `${50 * scaleFactor}px`; // sideButton의 위치 조정
-
 
             // 글자 크기 조정: 1140px에서는 16px, 다른 가로 폭에서는 비례적으로 조정
             const baseFontSize = 16; // 1140px에서의 기본 글자 크기
             document.documentElement.style.fontSize = `${baseFontSize * scaleFactor}px`;
         }
-        // document.addEventListener('scroll', function() {
-        //     const maxScroll = document.getElementById('bottomImage');
-        //     if (window.scrollY > maxScroll) {
-        //         window.scrollTo(0, maxScroll);
-        //     }
-        // });
 
-
-        window.addEventListener('resize', adjustScale);
         adjustScale();
+        window.addEventListener('resize', adjustScale);
+
 
 
 
