@@ -54,7 +54,7 @@
             display: flex;
             position: fixed;
             width: 25vw;
-            height: 10vw;
+            height: 6.5vw;
             bottom: 2vh;
             color: #FFF;
             right: 1vw;
@@ -148,7 +148,7 @@
         }
 
         input {
-
+            box-sizing: border-box;
             border-radius: 20px;
             border: 3px solid var(--memo-LG2, #D5D7E5);
             background: #FFF;
@@ -179,10 +179,11 @@
 
         .footer-section {
             text-align: center;
-            font-size: 40px;
+            font-size: 20px;
         }
 
         #ask_system {
+            box-sizing: border-box;
             display: flex;
             width: 1578px;
             padding: 28px 114px;
@@ -271,42 +272,42 @@
         <!-- 페이지의 나머지 내용 -->
 
         <img width="100%" src="header_image.jpg" alt="1" />
-        <div id="timer">
-            <span class="header_txt">무료 커스터마이징 이벤트 남은 시간!</span>
-            <div id="countdown">
-                <span id="day"> 일</span>
-                <!-- <span id="time"></span> -->
-                <!-- <div style="display: flex;flex-direction:row"> -->
-                <div id="hours" class="time_box"></div>
-                <div class="comma">:</div>
-                <div id="minutes" class="time_box"></div>
-                <div class="comma">:</div>
-                <div id="seconds" class="time_box"></div>
-                <!-- <span class="time_text">:</span> -->
+        <!-- <div id="timer"> -->
+        <!-- <span class="header_txt">무료 커스터마이징 이벤트 남은 시간!</span> -->
+        <!-- <div id="countdown"> -->
+        <!-- <span id="day"> 일</span> -->
+        <!-- <span id="time"></span> -->
+        <!-- <div style="display: flex;flex-direction:row"> -->
+        <!-- <div id="hours" class="time_box"></div> -->
+        <!-- <div class="comma">:</div> -->
+        <!-- <div id="minutes" class="time_box"></div> -->
+        <!-- <div class="comma">:</div> -->
+        <!-- <div id="seconds" class="time_box"></div> -->
+        <!-- <span class="time_text">:</span> -->
 
-                <!-- </div> -->
+        <!-- </div> -->
 
-                <!-- <span id= ></span> -->
-            </div>
-        </div>
-        <hr class="dotted-line">
+        <!-- <span id= ></span> -->
+        <!-- </div> -->
+    </div>
+    <!-- <hr class="dotted-line"> -->
 
 
 
-        <div style="color: var(--Red, #FF5858);
+    <div style="color: var(--Red, #FF5858);
 /* font-family: Pretendard; */
 font-size: 50px;
 font-style: normal;
 font-weight: 700;
-line-height: normal;margin-top:191px;text-align:center"> 세상에서 단 하나 뿐인 [한방병원/한의원] 시스템 제작</div>
+line-height: normal;text-align:center">초거대 AI 기반, 내원율 증가 프로그램</div>
 
-        <div style="color: #0669F6;
+    <div style="color: #0669F6;
 font-size: 128px;
 font-style: normal;
 font-weight: 800;
-line-height: normal;margin-top:69px;text-align:center">커스터마이징 시스템</div>
-        <div id="targetPoint">
-            <div style="color: var(--memo-G2, #45464D);
+line-height: normal;margin-top:69px;text-align:center">AI 카톡 전송 서비스</div>
+    <div id="targetPoint">
+        <div style="color: var(--memo-G2, #45464D);
 text-align: center;
 /* font-family: Pretendard; */
 font-size: 50px;
@@ -315,26 +316,26 @@ font-weight: 700;
 line-height: 75px; /* 150% */
 margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
 
-            <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
+        <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
             <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span> -->
-            <div style="display:flex;gap:44px">
-                <input type="text" id="clinicName" name="clinicName" placeholder="한방병원 명">
-                <input type="email" id="email" name="email" placeholder="이메일 또는 연락처">
-            </div>
-            <br>
-            <button id="ask_system">시스템 문의하기</button>
-            <br>
+        <div style="display:flex;gap:44px">
+            <input type="text" id="clinicName" name="clinicName" placeholder="한방병원 명">
+            <input type="email" id="email" name="email" placeholder="이메일 or 연락처">
         </div>
-        <img width="100%" src="bottom_image.jpg" alt="1" />
-        <div class="footer-section">
-            <p>상호명: (주) SMCP | 대표자명: 김지향</p>
-            <p>개발문의 : 최상배 <a href="mailto:sbchoi129@smcp.ai">sbchoi129@smcp.ai</a></p>
-            <p>사업장 주소: 대구광역시 남구 명덕로104, 계명대학교 감부열관 209호(대명동)</p>
-            <p>사업자 등록번호: 375-87-02223 | 이메일: <a href="mailto:smcp@smcp.ai">smcp@smcp.ai</a></p>
-            <p>통신판매업 신고번호: 제 2022-대구남구-0325호</p>
+        <br>
+        <button id="ask_system">시스템 문의하기</button>
+        <br>
+    </div>
+    <img width="100%" src="bottom_image2.png" alt="1" />
+    <div class="footer-section">
+        <p>상호명: (주) SMCP | 대표자명: 김지향</p>
+        <p>개발문의 : 최상배 <a href="mailto:sbchoi129@smcp.ai">sbchoi129@smcp.ai</a></p>
+        <p>사업장 주소: 대구광역시 남구 명덕로104, 계명대학교 감부열관 209호(대명동)</p>
+        <p>사업자 등록번호: 375-87-02223 | 이메일: <a href="mailto:smcp@smcp.ai">smcp@smcp.ai</a></p>
+        <p>통신판매업 신고번호: 제 2022-대구남구-0325호</p>
 
-        </div>
-        <!-- <img id="bottomImage" width="100%" src="bottom_image.jpg" alt="1" /> -->
+    </div>
+    <!-- <img id="bottomImage" width="100%" src="bottom_image.jpg" alt="1" /> -->
     </div>
 
     <!-- <div id="myModal" class="modal">
@@ -360,39 +361,39 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
     </div> -->
 
     <script>
-        let hours_txt = document.getElementById("hours");
-        let minutes_txt = document.getElementById("minutes");
-        let seconds_txt = document.getElementById("seconds");
+        // let hours_txt = document.getElementById("hours");
+        // let minutes_txt = document.getElementById("minutes");
+        // let seconds_txt = document.getElementById("seconds");
 
-        // Function to format the remaining time as a string and display it
-        function formatRemainingTime(timeRemaining) {
-            const seconds = Math.floor((timeRemaining / 1000) % 60);
-            const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
-            const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        // // Function to format the remaining time as a string and display it
+        // function formatRemainingTime(timeRemaining) {
+        //     const seconds = Math.floor((timeRemaining / 1000) % 60);
+        //     const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+        //     const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+        //     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
-            // Format time string with leading zeros
-            const hoursPadded = hours.toString().padStart(2, '0');
-            const minutesPadded = minutes.toString().padStart(2, '0');
-            const secondsPadded = seconds.toString().padStart(2, '0');
+        //     // Format time string with leading zeros
+        //     const hoursPadded = hours.toString().padStart(2, '0');
+        //     const minutesPadded = minutes.toString().padStart(2, '0');
+        //     const secondsPadded = seconds.toString().padStart(2, '0');
 
-            // Display days
-            let day_text = days + "일";
-            let day = document.getElementById("day");
-            day.textContent = day_text;
+        //     // Display days
+        //     let day_text = days + "일";
+        //     let day = document.getElementById("day");
+        //     day.textContent = day_text;
 
-            hours_txt.textContent = hoursPadded;
-            minutes_txt.textContent = minutesPadded;
-            seconds_txt.textContent = secondsPadded;
-
-
-            // Display time
-            // let time_text = hoursPadded + ":" + minutesPadded + ":" + secondsPadded;
-            // let time = document.getElementById("time");
-            // time.textContent = time_text;
+        //     hours_txt.textContent = hoursPadded;
+        //     minutes_txt.textContent = minutesPadded;
+        //     seconds_txt.textContent = secondsPadded;
 
 
-        }
+        //     // Display time
+        //     // let time_text = hoursPadded + ":" + minutesPadded + ":" + secondsPadded;
+        //     // let time = document.getElementById("time");
+        //     // time.textContent = time_text;
+
+
+        // }
 
         // Function that you want to execute when the date is reached
         function executeAction() {
@@ -414,7 +415,7 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
                 formatRemainingTime(timeRemaining);
             }
         }
-        set_time();
+        // set_time();
 
         document.getElementById("sideButton").addEventListener("click", function() {
             const targetElement = document.getElementById("targetPoint");
@@ -520,24 +521,24 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
 
 
 
-        async function countdown_start() {
+        // async function countdown_start() {
 
 
-            // Update the countdown every second
-            const countdownInterval = setInterval(function() {
-                const timeRemaining = targetDate.getTime() - Date.now();
-                // If the target date is in the future, update the countdown
-                if (timeRemaining > 0) {
-                    formatRemainingTime(timeRemaining);
-                } else {
-                    executeAction(); // The specified date has been reached
-                }
-            }, 1000);
-        }
+        //     // Update the countdown every second
+        //     const countdownInterval = setInterval(function() {
+        //         const timeRemaining = targetDate.getTime() - Date.now();
+        //         // If the target date is in the future, update the countdown
+        //         if (timeRemaining > 0) {
+        //             formatRemainingTime(timeRemaining);
+        //         } else {
+        //             executeAction(); // The specified date has been reached
+        //         }
+        //     }, 1000);
+        // }
         // 페이지 로드가 완료되면 'loaded' 클래스를 body에 추가합니다.
         window.addEventListener('load', async function() {
             // Update the countdown every second
-            await countdown_start();
+            // await countdown_start();
             document.body.classList.add('loaded');
         });
 
