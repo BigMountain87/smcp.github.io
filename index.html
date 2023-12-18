@@ -314,7 +314,7 @@ font-size: 50px;
 font-style: normal;
 font-weight: 700;
 line-height: 75px; /* 150% */
-margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
+margin-top:69px;margin-bottom:69px;">한방병원 / 한의원 명과 이메일 또는 연락처를 남겨주세요!<br>확인 후 연락드리겠습니다</div>
 
         <!-- <span style="font-size: 34px;font-weight: 700;">한방병원 명과 이메일 또는 연락처를 남겨주시면,</span>
             <span style="font-size: 34px;font-weight: 700;">연락드리겠습니다!</span> -->
@@ -420,7 +420,7 @@ margin-top:69px;margin-bottom:122px;">한방병원 / 한의원 명과 이메일 
         document.getElementById("sideButton").addEventListener("click", function() {
             const targetElement = document.getElementById("targetPoint");
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - (window.innerHeight / 4);
+            const offsetPosition = elementPosition - (window.innerHeight / 4) - 5;
 
             window.scrollTo({
                 top: offsetPosition,
